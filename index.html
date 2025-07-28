@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>27TwinsDay</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="intro-box">
+      <img src="mata.gif" alt="eyes gif" class="intro-gif">
+      <h1 class="intro-title">Hola, mysterious one 🌼</h1>
+      <p class="intro-desc">
+        Knock knock... who's there? <br>
+        You can't sneak in that easy... tell us your name first!<br>
+        Then we'll show you some sweet memories and a special birthday greeting for Dina & Dini!✨
+      </p>
+
+      <form onsubmit="return checkName()" class="intro-form">
+        <input type="text" id="nameInput" name="name" placeholder="masukin nama dulu ya guys..." required class="name-input"/>
+        <button type="submit" class="next-btn">Let's Go!</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function checkName() {
+      const allowedNames = ["dini devina", "dina kania", "aprelleya"];
+      const inputName = document.getElementById("nameInput").value.trim().toLowerCase();
+
+      if (allowedNames.includes(inputName)) {
+        window.location.href = "memory.html?name=" + encodeURIComponent(inputName);
+        return false; // prevent default form action
+      } else {
+        alert("Oops! kamu bukan bagian dari hari spesial ini 😝");
+        return false;
+      }
+    }
+  </script>
+</body>
+</html>
